@@ -1,0 +1,153 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+ <head>
+     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="{% static 'main/css/Button.css' %}">
+     <link rel="stylesheet" href="{% static '/adv/css/adv.css' %}">
+
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;400;500;600&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap" rel="stylesheet">
+     <title>Подборки</title>
+     <style>
+        * {box-sizing: content-box;}
+         .text_0 { background-image:url({% static 'main/img/partner_0.jpg' %}) ; }
+         .text_2 { background-image:url({% static 'main/img/partner_1.jpg' %}) ; }
+         .text_1 { background-image:url({% static 'main/img/partner_2.jpg' %}) ; }
+         .text_3 { background-image:url({% static 'main/img/partner_3.jpg' %}) ; }
+         .text_4 { background-image:url({% static 'main/img/partner_4.jpg' %}) ; }
+         .click_hamburger { background: url({% static 'main/img/hamburger_menu.png' %});}
+        .click_hamburger:hover { background: url({% static 'main/img/hamburger_menu_hover.png' %});}
+        .out_login { background: url({% static 'main/img/out_login.png' %} );}
+        .out_login:hover { background: url({% static 'main/img/out_login_hover.png' %});}
+     </style>
+
+
+  </head>
+  <body>
+
+  <div class="main">
+
+        <div class="main_block">
+            <div class="container">
+
+                <label class="click_hamburger" for="toggle"></label>
+                 <img class="circle-11" src="{% static 'main/img/circle.png' %}" alt="circle">
+                        <img class="circle-21" src="{% static 'main/img/circle.png' %}" alt="circle">
+                        <img class="circle-31" src="{% static 'main/img/circle.png' %}" alt="circle">
+                        <img class="circle-41" src="{% static 'main/img/circle.png' %}" alt="circle">
+                        <img class="circle-51" src="{% static 'main/img/circle.png' %}" alt="circle">
+                        <img class="circle-61" src="{% static 'main/img/circle.png' %}" alt="circle">
+                <h1>ЧТО НОВОГО У НАШИХ ПАРТНЕРОВ</h1>
+                <div class ="advertisement">
+
+
+                    <div class="left_part">
+                        <div class = "partner_0">
+                            <div class="text text_0">
+                                <div class = "partner_text_0">
+                                    <h3>{{ adv_title_0 }}</h3>
+
+                                    <a href = "" class="floating-button results_menu_button">Подробнее</a>
+                                </div>
+                            </div>
+                       </div>
+
+                        <div class = "partner_1">
+                            <div class = "text text_1">
+                                <div class="partner_text_1">
+                                    <h3>{{ adv_title_2 }}</h3>
+
+                                    <a href = "" class="floating-button results_menu_button">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right_part">
+                        <div class = "partner_2">
+                            <div class = "text text_2">
+                                <div class="partner_text_2">
+                                    <h3>{{ adv_title_1 }}</h3>
+                                    <p>{{ adv_anons_1}}</p>
+                                    <a href = "" class="floating-button results_menu_button">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right_down_part">
+                            <div class = "partner_3">
+                                <div class = "text text_3">
+                                    <div class="partner_text_3_up">
+                                        <h3>{{ adv_title_3 }}</h3>
+                                    </div>
+                                    <div class="partner_text_3_down">
+                                        <p>{{ adv_anons_3}}</p>
+                                        <a href = "" class="floating-button results_menu_button">Подробнее</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class = "partner_4">
+                                <div class = "text text_4">
+                                    <div class="partner_text_4_up">
+                                        <h3>{{ adv_title_4 }}</h3>
+                                    </div>
+                                    <div class="partner_text_4_down">
+                                        <p>{{ adv_anons_4}}</p>
+                                        <a href = "" class="floating-button results_menu_button">Подробнее</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="checkbox" id="toggle" hidden="hidden">
+            <div class="main-menu">
+                <div class="mute_glass"></div>
+                <div class="menu">
+                    <div class="menu_menu">
+                        <a href="{% url 'home' %}" class="menu_text" >Главная</a>
+                        <a href="{% url 'about' %}" class="menu_text" >О нас</a>
+                        <a href="{% url 'try_home' %}" class="menu_text">Хочу читать</a>
+                        <a href="{% url 'adv' %}" class="menu_text" style="color: #FE982A;">Подборки</a>
+                        <a href="{% url 'contacts' %}" class="menu_text">Контакты</a> <br>
+                    </div>
+                    <div class="menu_button_block">
+                        <label class="menu_button" for="login_bar">Личный кабинет</label>
+                    </div>
+                </div>
+            </div>
+            <input type="checkbox" id="login_bar" hidden="hidden">
+            <div class="registration_menu">
+                <div class="visual_circles">
+                    <img class="visual_circle_1" src="{% static 'main/img/circle.png' %}" alt="circle">
+                    <img class="visual_circle_2" src="{% static 'main/img/circle.png' %}" alt="circle">
+                    <img class="visual_circle_3" src="{% static 'main/img/circle.png' %}" alt="circle">
+                    <img class="visual_circle_4" src="{% static 'main/img/circle.png' %}" alt="circle">
+                    <img class="visual_circle_5" src="{% static 'main/img/circle.png' %}" alt="circle">
+                </div>
+                <div class="login_menu">
+                    <label class="out_login" for="login_bar"></label>
+                    <div class="login_block">
+                        <img class="logo" src="{% static 'main/img/LiteraTor_logo.png' %}" alt="LiteraTor_logo">
+                        <div class="login_text">Поиск книг через личный кабинет делает результат качественне, <br> потому что все ваши запросы сохраняются и дополняют друг друга.</div>
+                        <a href="{% url 'regist' %}" class="login_button" >Регистрация</a>
+                        <a href="" class="login_button">Войти</a>
+                        <a href="" class="login_button">Мобильная версия</a>
+                        <a href="" class="menu_text fix_login">Восстановление аккаунта</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+  </body>
+</html>

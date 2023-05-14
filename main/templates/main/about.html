@@ -1,0 +1,113 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>О нас</title>
+     <link rel="stylesheet" href="{% static 'main/css/Button.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/about.css' %}">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+ </head>
+
+ <style>
+         * {box-sizing: content-box;}
+         .author_logo_3 { background-image: url({% static 'main/img/maria.png' %}); }
+         .author_logo_2 { background-image: url({% static 'main/img/Nikita.png' %}); }
+         .author_logo_1 { background-image: url({% static 'main/img/nas.png' %}); }
+         .our_dx_logo { background-image: url({% static 'main/img/iot.png' %}); }
+        .click_hamburger { background: url({% static 'main/img/hamburger_menu.png' %});}
+        .click_hamburger:hover { background: url({% static 'main/img/hamburger_menu_hover.png' %});}
+        .out_login { background: url({% static 'main/img/out_login.png' %} );}
+        .out_login:hover { background: url({% static 'main/img/out_login_hover.png' %});}
+
+ </style>
+ <body>
+ <div class="main">
+
+        <div class="main_block">
+            <div class="container">
+                <label class="click_hamburger" for="toggle"></label>
+                <img class="circle-11" src="{% static 'main/img/circle.png' %}" alt="circle">
+                <img class="circle-21" src="{% static 'main/img/circle.png' %}" alt="circle">
+                <img class="circle-31" src="{% static 'main/img/circle.png' %}" alt="circle">
+                <img class="circle-41" src="{% static 'main/img/circle.png' %}" alt="circle">
+                <img class="circle-51" src="{% static 'main/img/circle.png' %}" alt="circle">
+                <img class="circle-61" src="{% static 'main/img/circle.png' %}" alt="circle">
+
+                <div class = "who_we_are">
+                    <h2>Кто мы?</h2>
+                    <div class="author author_1">
+                        <a class="author_logo author_logo_1" href="https://vk.com/umi_0_193"></a>
+                        <div class="author_text author_text_1"> Анастасия Стрельчук это мозг нашей команды. Решает всё на своём пути и много много много всего крутого</div>
+                    </div>
+
+                    <div class = "author author_2">
+                        <a class="author_logo author_logo_2" href="https://vk.com/nnikitonn"></a>
+                        <div class="author_text author_text_2">Никита Касьянов это мозг нашей команды. Решает всё на своём пути и много много много всего крутого</div>
+                    </div>
+
+                    <div class = "author author_3">
+                        <a class="author_logo author_logo_3" href="https://vk.com/maryfuduley"></a>
+                        <div class="author_text author_text_3">Мария Фудулей это мозг нашей команды. Решает всё на своём пути и много много много всего крутого</div>
+                    </div>
+                </div>
+                <div class="who_our_dx_is">
+                    <div class="our_dx_text">
+                        <div>Модель проектного обучения в Школе Икс нацелена на подготовку специалистов,
+                        которые способны решать актуальные технологические задачи промышленных предприятий, разрабатывать и развивать собственные инновационные проекты.</div> <br>
+                        <div>Поэтому обучение в Институте опережающих технологий ДГТУ построено на принципах, которые позволяют подготовить системных инженеров
+                            с уникальным набором навыков и компетенций.</div>
+                    </div>
+                    <a class="our_dx_logo" href="https://donstux.com"></a>
+
+
+                </div>
+            </div>
+
+            <input type="checkbox" id="toggle" hidden="hidden">
+            <div class="main-menu">
+                <div class="mute_glass"></div>
+                <div class="menu">
+                    <div class="menu_menu">
+                        <a href="{% url 'home' %}" class="menu_text" >Главная</a>
+                        <a href="{% url 'about' %}" class="menu_text" style="color: #FE982A;">О нас</a>
+                        <a href="{% url 'try_home' %}" class="menu_text">Хочу читать</a>
+                        <a href="{% url 'adv' %}" class="menu_text">Подборки</a>
+                        <a href="{% url 'contacts' %}" class="menu_text">Контакты</a> <br>
+                    </div>
+                    <div class="menu_button_block">
+                        <label class="menu_button" for="login_bar">Личный кабинет</label>
+                    </div>
+                </div>
+            </div>
+            <input type="checkbox" id="login_bar" hidden="hidden">
+            <div class="registration_menu">
+                <div class="visual_circles">
+                    <img class="visual_circle_1" src="{% static 'main/img/circle.png' %}" alt="circle">
+                    <img class="visual_circle_2" src="{% static 'main/img/circle.png' %}" alt="circle">
+                    <img class="visual_circle_3" src="{% static 'main/img/circle.png' %}" alt="circle">
+                    <img class="visual_circle_4" src="{% static 'main/img/circle.png' %}" alt="circle">
+                    <img class="visual_circle_5" src="{% static 'main/img/circle.png' %}" alt="circle">
+                </div>
+                <div class="login_menu">
+                    <label class="out_login" for="login_bar"></label>
+                    <div class="login_block">
+                        <img class="logo" src="{% static 'main/img/LiteraTor_logo.png' %}" alt="LiteraTor_logo">
+                        <div class="login_text">Поиск книг через личный кабинет делает результат качественне, <br> потому что все ваши запросы сохраняются и дополняют друг друга.</div>
+                        <a href="{% url 'regist' %}" class="login_button" >Регистрация</a>
+                        <a href="" class="login_button">Войти</a>
+                        <a href="" class="login_button">Мобильная версия</a>
+                        <a href="" class="menu_text fix_login">Восстановление аккаунта</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+ </body>
+</html>

@@ -1,0 +1,278 @@
+.search_book{
+    display: flex;
+    overflow: hidden;
+    width: 100vw;
+    background: #F8F2F2;
+}
+
+.search_book_booking{
+    display: flex;
+    width: 100vw;
+}
+
+.searching_block_text{
+    margin-top: 10vh;
+    margin-bottom: 12vh;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    color: #F8F2F2;
+}
+
+.books_block{
+    display: flex;
+    height: 100vh;
+    width: 70vw;
+    background: #F8F2F2;
+}
+
+.searching_block{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 30vw;
+    background: #FE982A;
+}
+
+.book_frame{
+    position: relative;
+    height: 55vh;
+    width: 22vw;
+    background-color: #fff;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6vh;
+
+}
+
+.frame_book_1{
+    top: 4vh;  
+}
+
+.frame_book_2{
+    top: 23vh;
+    left: 2vw;
+}
+
+
+.frame_book_3{
+    top: 41vh;
+    left: 4vw;
+}
+
+
+.add_book_2_button{
+    display: block; /*  Рисунок как блочный элемент */
+    width: 103px; 
+    height: 103px;
+    margin-top: 3vh;
+    transition: .3s; 
+}
+
+.add_book_3_button{
+    margin-top: 3vh;
+    display: none;
+    width: 103px; 
+    height: 103px;
+    transition: .3s; 
+}
+
+
+.query_book_2 { display: none;  }
+
+.query_book_3 { display: none;  }
+#add_book_3:checked ~ .query_book_3 {display: flex;  }
+#add_book_3:checked ~ .add_book_3_button { display: none;  }
+
+.books_search{
+    display: flex;
+    position: absolute;
+    top: 70vh;
+    left: 82.35vw;
+}
+.ready_button{
+    display: flex; /*  Рисунок как блочный элемент */
+    width: 103px; 
+    height: 103px;
+    transition: .3s; 
+}
+
+
+
+.book_genring_button{
+    width: 103px; 
+    height: 103px;
+}
+
+/* -------------------ВТОРОЙ ЭКРАН ------------------*/
+
+
+.search_book_ganring{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    
+}
+
+.genring_background{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background: #FE982A;
+    flex-direction: row;
+}
+
+.genring_sides{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.genres_text{
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    margin-top: 5vh;
+    color: #F8F2F2;
+}
+
+.cool_genres_hole{
+    display: flex;
+    margin-top: 5vh;
+    height: 696px;
+    width: 752px;
+}
+
+.bad_genres_hole{
+    display: flex;
+    margin-top: 5vh;
+    height: 696px;
+    width: 752px;
+}
+
+.prompt{
+    position: relative;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    margin-top: 5vh;
+    left: -12vw;
+    color: #F8F2F2;
+}
+
+.go_to_results{
+    position: relative;
+    left: 20vw;
+    display: flex; /*  Рисунок как блочный элемент */
+    width: 103px; 
+    height: 103px;
+    transition: .3s; 
+}
+
+/* -------------------ТРЕТИЙ ЭКРАН ------------------*/
+
+.search_book_resulting{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: #6AC4A6;
+}
+
+.resalts{
+    display: flex;
+    width: 100vw;
+    height: 60vh;
+    justify-content: space-around;
+    margin-top: 10vh;
+}
+
+.resulting_text{
+    margin-top: 10vh;
+}
+
+.circle_3{
+    top: 8vh;
+    left: 6vw;
+    width: 30px;
+    height: 28px;
+    position: absolute;
+    z-index: 3;
+}
+
+.circle_2{
+    top: 28vh;
+    left: 30vw;
+    width: 46px;
+    height: 44px;
+    position: absolute;
+    z-index: 3;
+}
+
+.circle_1{
+    top: 18vh;
+    left: 90vw;
+    width: 25px;
+    height: 23px;
+    position: absolute;
+    z-index: 3;
+}
+
+.results_menu_block{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100vw;
+    height: 10vh;
+}
+
+.results_menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    background: #fff;
+    
+}
+.email_form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 30hw;
+    background: #F8F2F2;
+}
+.try_again_button{
+    width: 25vw;
+    align-items: center;
+    height: 10vh;
+}
+
+.results_menu_button{
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 10vw;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.results_menu_button:hover {
+    background: #6AC4A6;
+    box-shadow: 0 5px 5px rgba(58, 173, 164, 0.603);
+    color: white;
+    transform: translateY(0px);
+}
+
+
+
+

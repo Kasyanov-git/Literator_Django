@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main/css/SITE_CSS.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/Button.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/search_block.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <title>Попробовать</title>
+</head>
+<style>
+    .add_book_2_button { background-image: url({% static 'main/img/add_book_button.png' %}); }
+    .add_book_2_button:hover { background-image: url({% static 'main/img/add_book_button_clicked.png' %}); }
+    .add_book_3_button{ background-image: url({% static 'main/img/add_book_button.png' %}); }
+    .add_book_3_button:hover { background-image: url({% static 'main/img/add_book_button_clicked.png' %}); }
+    .ready_button { background: url({% static 'main/img/ready_button.png' %}); }
+    .ready_button:hover { background: url({% static 'main/img/ready_button_clicked.png' %}); }
+    .cool_genres_hole { background: url({% static 'main/img/cool_genres_hole.png' %}); }
+    .bad_genres_hole { background: url({% static 'main/img/bad_ganres_hole.png' %}); }
+    .go_to_results { background: url({% static 'main/img/ready_button.png' %}); }
+    .go_to_results:hover { background: url({% static 'main/img/ready_button_clicked.png' %}); }
+
+</style>
+<body>
+
+    <div class="search_book_ganring">
+
+            <div class="genring_background">
+                <div class="genring_sides">
+                    <div class="genres_text">КРУТЫЕ ЖАНРЫ</div>
+                    <div class="cool_genres_hole"></div>
+                    <div class="prompt">*прокрути дальше, если  жанр не важен</div>
+                </div>
+                <div class="genring_sides">
+                    <div class="genres_text">ТАКОЕ Я НЕ ЧИТАЮ</div>
+                    <div class="bad_genres_hole"></div>
+                    <a href="{% url 'results' %}" class="go_to_results"></a>
+                </div>
+                <!-- <div class="forms_ganre">
+                    <div class="positive_genre">
+                    </div>
+                    <form class="negative_genres" action="#" method="post">
+                    </form>
+                </div> -->
+            </div>
+        </div>
+ </body>
+</html>

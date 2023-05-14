@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Контакты</title>
+  <link rel="stylesheet" href="{% static 'main/css/contacts.css' %}">
+  </head>
+  <body>
+        <div class="container">
+             <div class = "container_1">
+                  <h2> НАПИШИ НАМ </h2>
+
+                 <form class="decor" method="post">
+                     <div class="form-inner">
+                     {% csrf_token %}
+                     <h3>Как к тебе обращаться?</h3>
+                     {{ form.title }}<br>
+                     <h3>Тема послания...</h3>
+                     {{ form.anons }}<br>
+                     <h3>Отзывы, предложения о сотрудничестве и конструктивную критику приветствуем!</h3>
+                     {{ form.full_text }}<br>
+                     <h3>Если ждёшь ответ, оставляй почту:</h3>
+                     {{ form.email }}
+                     {{ error }}
+<!--                     <input type="text" placeholder="Как к тебе обращаться?" class="form-control"><br>-->
+<!--                      <input type="text" placeholder="Тема послания..." class="form-control"><br>-->
+<!--                     <textarea placeholder="Отзывы, предложения о сотрудничестве и конструктивную критику приветствуем!" class="form-control"></textarea><br>-->
+<!--                      <input type="email" placeholder="Если ждёшь ответ, оставляй почту:" class="form-control"><br>-->
+                     <input type="submit" value="Отправить" >
+
+                         </div>
+
+                 </form>
+
+             </div>
+             <div class = "container2">
+                    <div class = "contact-left">
+                         <a href="https://support.google.com/googleplay/android-developer/answer/11950272"><img src="{% static 'main/img/playmarket.png' %}"></a>
+                         <a href="https://tlgrm.ru"><img src="{% static 'main/img/telega.png' %}"></a>
+                         <a href="https://mail.ru"><img src="{% static 'main/img/mail.png' %}"></a>
+                    </div>
+                    <div class = "contact-right">
+                        <a href="https://donstux.com"><img src="{% static 'main/img/iot_but.png' %}"></a>
+                    </div>
+             </div>
+
+
+        </div>
+         <div class = "container3">
+             <div align="center">ПАРТНЕРЫ</div>
+            <div class="partners">
+                <a href="https://www.labirint.ru"><img src="{% static 'main/img/labirint.png' %}"></a>
+                <a href="https://www.litres.ru"><img src="{% static 'main/img/litres.png' %}"></a>
+                <a href="https://www.amazon.com/Russian-eBooks/b?ie=UTF8&node=7735169011"><img src="{% static 'main/img/amazon.png' %}"></a>
+                <a href="https://alpinabook.ru"><img src="{% static 'main/img/alpina.png' %}"></a>
+                <a href="https://www.mann-ivanov-ferber.ru"><img src="{% static 'main/img/mif.png' %}"></a>
+            </div>
+
+         </div>
+
+</div>
+  </body>
+</html>

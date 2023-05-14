@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main/css/SITE_CSS.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/Button.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/search_block.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <title>Попробовать</title>
+</head>
+<style>
+    .add_book_2_button { background-image: url({% static 'main/img/add_book_button.png' %}); }
+    .add_book_2_button:hover { background-image: url({% static 'main/img/add_book_button_clicked.png' %}); }
+    .add_book_3_button{ background-image: url({% static 'main/img/add_book_button.png' %}); }
+    .add_book_3_button:hover { background-image: url({% static 'main/img/add_book_button_clicked.png' %}); }
+    .ready_button { background: url({% static 'main/img/ready_button.png' %}); }
+    .ready_button:hover { background: url({% static 'main/img/ready_button_clicked.png' %}); }
+    .cool_genres_hole { background: url({% static 'main/img/cool_genres_hole.png' %}); }
+    .bad_genres_hole { background: url({% static 'main/img/bad_ganres_hole.png' %}); }
+    .go_to_results { background: url({% static 'main/img/ready_button.png' %}); }
+    .go_to_results:hover { background: url({% static 'main/img/ready_button_clicked.png' %}); }
+    input::placeholder{ color: #000;}
+    input{ font-size:large;}
+
+</style>
+<body>
+
+    <div class="search_book_resulting">
+            <div class="genres_text resulting_text">ВАША ПОДБОРКА</div>
+            <div class="resalts">
+                <img class="book_frame " src="{{ Books_result.book_1_name}}" alt="{{ Books_result.book_1_name}}">
+                <img class="book_frame " src="{{ Books_result.book_2_name}}" alt="{{ Books_result.book_2_name}}">
+                <img class="book_frame " src="{{ Books_result.book_3_name}}" alt="{{ Books_result.book_3_name}}">
+            </div>
+            <div class="share_resalts"></div>
+            <img class="circle_1" src="{% static 'main/img/circle.png' %}" alt="circle" style="top:64vh; left:2vw;">
+            <img class="circle_2" src="{% static 'main/img/circle.png' %}" alt="circle" style="top:78vh; left:62vw;">
+            <img class="circle_3" src="{% static 'main/img/circle.png' %}" alt="circle" style="top:74vh; left:27vw;">
+            <img class="circle_1" src="{% static 'main/img/circle.png' %}" alt="circle" style="top:40vh; left:68vw;">
+            <img class="circle_2" src="{% static 'main/img/circle.png' %}" alt="circle" style="top:30vh; left:95vw;">
+            <img class="circle_3" src="{% static 'main/img/circle.png' %}" alt="circle">
+            <img class="circle_1" src="{% static 'main/img/circle.png' %}" alt="circle">
+            <img class="circle_2" src="{% static 'main/img/circle.png' %}" alt="circle">
+
+            <div class="results_menu_block">
+                <a href="{% url 'try_home' %}"><img class="try_again_button" src=" {% static 'main/img/try_again.png' %}" alt="try_again"></a>
+                <div class="results_menu">
+                    <a href="" class="floating-button results_menu_button">Личный кабинет</a>
+                    <form class="email_form" action="">
+                        <input class="" type="email"  placeholder="email" style="color:#000000;">
+                        <input type="submit" style="color:#000000;">
+                    </form>
+                    <a href="" class="floating-button results_menu_button">Поделиться</a>
+                </div>
+                <a href="{% url 'contacts' %}"><img class="try_again_button" src="{% static 'main/img/feedback.png' %}" alt="feedback"></a>
+            </div>
+
+        </div>
+ </body>
+</html>

@@ -1,0 +1,69 @@
+.floating-button {
+    padding: 10px 60px;
+    text-decoration: none;
+    display: flex;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 45px;
+    border-radius: 5px;
+    margin-top: 8vh;
+    text-align: center;
+    letter-spacing: 3px;
+    color: #524f4e;
+    background: rgba(248, 242, 242, 1);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, .1);
+    transition: .3s;
+  }
+  .floating-button:hover {
+    background: #FE982A;
+    box-shadow: 0 15px 20px rgba(255, 141, 65, 0.603);
+    color: white;
+    transform: translateY(-7px);
+  }
+
+
+  * {box-sizing: border-box;}
+.query_book {
+  padding: 1vh 1vw 1vh 1vh;
+  margin-top: 5vh;
+  display: flex;
+  overflow: hidden;
+  width: 20vw;
+  background: #F8F2F2;
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
+}
+input, button {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+input {
+  width: 100%;
+  height: 42px;
+  padding-left: 15px;
+  font-size:x-large;
+  color: #FE982A;
+}
+
+input::placeholder {
+    font-size: x-large;
+    color: #FE982A;
+}
+
+.search_book_button {
+  height: 42px;
+  width: 42px;
+  /* margin: 2px; */
+  position: relative;
+  top: 50px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.query_book:hover .search_book_button{
+    transform: translateY(-50px);
+}
+
+

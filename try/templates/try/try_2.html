@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main/css/SITE_CSS.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/Button.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/search_block.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/left_bar.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <title>Попробовать</title>
+</head>
+<style>
+    .add_book_2_button { background-image: url({% static 'main/img/add_book_button.png' %}); }
+    .add_book_2_button:hover { background-image: url({% static 'main/img/add_book_button_clicked.png' %}); }
+    .add_book_3_button{ background-image: url({% static 'main/img/add_book_button.png' %}); }
+    .add_book_3_button:hover { background-image: url({% static 'main/img/add_book_button_clicked.png' %}); }
+    .ready_button { background: url({% static 'main/img/ready_button.png' %}); }
+    .ready_button:hover { background: url({% static 'main/img/ready_button_clicked.png' %}); }
+    .cool_genres_hole { background: url({% static 'main/img/cool_genres_hole.png' %}); }
+    .bad_genres_hole { background: url({% static 'main/img/bad_ganres_hole.png' %}); }
+    .go_to_results { background: url({% static 'main/img/ready_button.png' %}); }
+    .go_to_results:hover { background: url({% static 'main/img/ready_button_clicked.png' %}); }
+    .query_book_2 { display: flex; }
+    .add_book_3_button { display: flex; }
+    .add_book_2_button { display: none;  }
+    .click_hamburger { background: url({% static 'main/img/hamburger_menu.png' %});}
+        .click_hamburger:hover { background: url({% static 'main/img/hamburger_menu_hover.png' %});}
+        .out_login { background: url({% static 'main/img/out_login.png' %} );}
+        .out_login:hover { background: url({% static 'main/img/out_login_hover.png' %});}
+
+</style>
+<body>
+<div class="main">
+
+        <div class="main_block">
+            <div class="search_book">
+                <label class="click_hamburger" for="toggle"></label>
+                <div class="search_book_booking">
+                    <div class="books_block">
+                        <img class="book_frame frame_book_3" src="{{ liked_book.b_3_icon}}" alt="logo">
+                        <img class="book_frame frame_book_2" src="{{ liked_book.b_2_icon}}" alt="logo">
+                        <img class="book_frame frame_book_1" src="{{ liked_book.b_1_icon}}" alt="logo">
+                    </div>
+                    <div class="searching_block">
+                        <div class="searching_block_text"> МОЯ ЛЮБИМАЯ КНИГА</div>
+
+                        <form class="query_book query_book_1" action="get_query_book_1" method="get" >
+                            <input  name="q1" type="text" placeholder="Поиск..." value="{{ liked_book.b_1_ru_title }}">
+                            <button id="search_1" class="search_book_button" type="submit"><img class="picture_book_3" src="{% static 'main/img/search_icon.png' %}" alt="logo"></button>
+
+                        </form>
+                        <form class="query_book query_book_2"  action="get_query_book_2" method="get" >
+                            <input  name="q2" type="text" placeholder="Поиск..." value="{{ liked_book.b_2_ru_title }}">
+                            <button id="search_2" class="search_book_button" type="submit"><img class="picture_book_3" src="{% static 'main/img/search_icon.png' %}" alt="logo"></button>
+                        </form>
+                        <label class="add_book_2_button" for="search_1"></label>
+
+                        <form class="query_book query_book_3" action="get_query_book_3" method="get" >
+                            <input  name="q3" type="text" placeholder="Поиск..." value="{{ liked_book.b_3_ru_title }}">
+                            <button class="search_book_button" type="submit"><img class="picture_book_3" src="{% static 'main/img/search_icon.png' %}" alt="logo"></button>
+                        </form>
+                        <label class="add_book_3_button" for="search_2"></label>
+
+                        <form class="books_search" action="buttonClick" method="post">
+                             {% csrf_token %}<br>
+                            <input name="book_1" type="hidden" value="{{ liked_book.b_1_ru_title }}">
+                            <input name="book_2" type="hidden" value="{{ liked_book.b_2_ru_title }}">
+                            <input name="book_3" type="hidden" value="{{ liked_book.b_3_ru_title }}">
+                            <input type="submit" name="send" id="send_result" hidden="hidden">
+                            <label class="ready_button" for="send_result"></label>
+
+
+                        </form>
+                    </div>
+
+                </div>
+
+                </div>
+
+            </div>
+
+            <input type="checkbox" id="toggle" hidden="hidden">
+            <div class="main-menu">
+                <div class="mute_glass"></div>
+                <div class="menu">
+                    <div class="menu_menu">
+                        <a href="{% url 'home' %}" class="menu_text" >Главная</a>
+                        <a href="{% url 'about' %}" class="menu_text">О нас</a>
+                        <a href="{% url 'try_home' %}" class="menu_text" style="color: #FE982A;">Хочу читать</a>
+                        <a href="{% url 'adv' %}" class="menu_text">Подборки</a>
+                        <a href="{% url 'contacts' %}" class="menu_text">Контакты</a> <br>
+                    </div>
+                    <div class="menu_button_block">
+                        <label class="menu_button" for="login_bar">Личный кабинет</label>
+                    </div>
+                </div>
+            </div>
+            <input type="checkbox" id="login_bar" hidden="hidden">
+            <div class="registration_menu">
+                <div class="visual_circles">
+                    <img class="visual_circle_1" src="{% static 'main/img/circle.png' %}" alt="circle">
+                    <img class="visual_circle_2" src="{% static 'main/img/circle.png' %}" alt="circle">
+                    <img class="visual_circle_3" src="{% static 'main/img/circle.png' %}" alt="circle">
+                    <img class="visual_circle_4" src="{% static 'main/img/circle.png' %}" alt="circle">
+                    <img class="visual_circle_5" src="{% static 'main/img/circle.png' %}" alt="circle">
+                </div>
+                <div class="login_menu">
+                    <label class="out_login" for="login_bar"></label>
+                    <div class="login_block">
+                        <img class="logo" src="{% static 'main/img/LiteraTor_logo.png' %}" alt="LiteraTor_logo">
+                        <div class="login_text">Поиск книг через личный кабинет делает результат качественне, <br> потому что все ваши запросы сохраняются и дополняют друг друга.</div>
+                        <a href="{% url 'regist' %}" class="login_button" >Регистрация</a>
+                        <a href="" class="login_button">Войти</a>
+                        <a href="" class="login_button">Мобильная версия</a>
+                        <a href="" class="menu_text fix_login">Восстановление аккаунта</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+ </body>
+</html>

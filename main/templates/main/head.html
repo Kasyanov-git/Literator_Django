@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main/css/SITE_CSS.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/Button.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/search_block.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <title>Главная страница</title>
+</head>
+<style>
+    .add_book_2_button { background-image: url({% static 'main/img/add_book_button.png' %}); }
+    .add_book_2_button:hover { background-image: url({% static 'main/img/add_book_button_clicked.png' %}); }
+    .add_book_3_button{ background-image: url({% static 'main/img/add_book_button.png' %}); }
+    .add_book_3_button:hover { background-image: url({% static 'main/img/add_book_button_clicked.png' %}); }
+    .ready_button { background: url({% static 'main/img/ready_button.png' %}); }
+    .ready_button:hover { background: url({% static 'main/img/ready_button_clicked.png' %}); }
+    .cool_genres_hole { background: url({% static 'main/img/cool_genres_hole.png' %}); }
+    .bad_genres_hole { background: url({% static 'main/img/bad_ganres_hole.png' %}); }
+    .go_to_results { background: url({% static 'main/img/ready_button.png' %}); }
+    .go_to_results:hover { background: url({% static 'main/img/ready_button_clicked.png' %}); }
+    .click_hamburger { background: url({% static 'main/img/hamburger_menu.png' %});}
+    .click_hamburger:hover { background: url({% static 'main/img/hamburger_menu_hover.png' %});}
+    .out_login { background: url({% static 'main/img/out_login.png' %} );}
+    .out_login:hover { background: url({% static 'main/img/out_login_hover.png' %});}
+
+</style>
+<body>
+
+    <div class="main">
+
+        <div class="main_block">
+            <div class="main-start" >
+                <img class="circle-1" src="{% static 'main/img/circle.png' %}" alt="circle">
+                <img class="circle-2" src="{% static 'main/img/circle.png' %}" alt="circle">
+                <img class="circle-3" src="{% static 'main/img/circle.png' %}" alt="circle">
+                <div class="header">
+                    <img class="logo" src="{% static 'main/img/LiteraTor_logo.png' %}" alt="LiteraTor_logo">
+                    <label class="click_hamburger" for="toggle"></label>
+
+                </div>
+                <div class="title">
+                    <div class="main_text">
+                        <span style="color:#FE982A">Literator</span>  - <br>
+                        КАЖДАЯ КНИГА <br>
+                        <span style="font-weight: 600;"> ЛЮБИМАЯ!</span>
+                        <div class="minor_text">
+                            Библитекарь у тебя в кармане, <br>
+                            который точно не ошибется.
+                        </div>
+                        <div class="main_button">
+                            <a href="{% url 'try_home' %}" class="floating-button">Хочу читать</a>
+                        </div>
+                    </div>
+                    <a href="{% url 'try_home' %}" class="start_line"><img  src="{% static 'main/img/start_line.png' %}" alt="start_line"></a>
+                    <div class="main_picture">
+                        <img class="picture" src="{% static 'main/img/book.png' %}" alt="book">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <input type="checkbox" id="toggle" hidden="hidden">
+            <div class="main-menu">
+                <div class="mute_glass"></div>
+                <div class="menu">
+                    <div class="menu_menu">
+                        <a href="{% url 'home' %}" class="menu_text" style="color: #FE982A;">Главная</a>
+                        <a href="{% url 'about' %}" class="menu_text">О нас</a>
+                        <a href="{% url 'try_home' %}" class="menu_text">Хочу читать</a>
+                        <a href="{% url 'adv' %}" class="menu_text">Подборки</a>
+                        <a href="{% url 'contacts' %}" class="menu_text">Контакты</a> <br>
+                    </div>
+                    <div class="menu_button_block">
+                        <label class="menu_button" for="login_bar">Личный кабинет</label>
+                    </div>
+                </div>
+            </div>
+            <input type="checkbox" id="login_bar" hidden="hidden">
+            <div class="registration_menu">
+                <div class="visual_circles">
+                    <img class="visual_circle_1" src="{% static 'main/img/circle.png' %}" alt="circle">
+                    <img class="visual_circle_2" src="{% static 'main/img/circle.png' %}" alt="circle">
+                    <img class="visual_circle_3" src="{% static 'main/img/circle.png' %}" alt="circle">
+                    <img class="visual_circle_4" src="{% static 'main/img/circle.png' %}" alt="circle">
+                    <img class="visual_circle_5" src="{% static 'main/img/circle.png' %}" alt="circle">
+                </div>
+                <div class="login_menu">
+                    <label class="out_login" for="login_bar"></label>
+                    <div class="login_block">
+                        <img class="logo" src="{% static 'main/img/LiteraTor_logo.png' %}" alt="LiteraTor_logo">
+                        <div class="login_text">Поиск книг через личный кабинет делает результат качественне, <br> потому что все ваши запросы сохраняются и дополняют друг друга.</div>
+                        <a href="{% url 'regist' %}" class="login_button" >Регистрация</a>
+                        <a href="" class="login_button">Войти</a>
+                        <a href="" class="login_button">Мобильная версия</a>
+                        <a href="" class="menu_text fix_login">Восстановление аккаунта</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+ </body>
+</html>
